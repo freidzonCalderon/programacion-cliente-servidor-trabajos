@@ -1,15 +1,16 @@
-public class Audiovisual {
+import java.util.ArrayList;
+
+public abstract class Audiovisual {
 
     private String title;
     private String genre;
     private double rating;
-    private String[] reviews;
+    private static final ArrayList<String> reviews = new ArrayList<>();
 
-    public Audiovisual(String title, String genre, double rating, String[] reviews) {
+    public Audiovisual(String title, String genre, double rating) {
         this.title = title;
         this.genre = genre;
         this.rating = rating;
-        this.reviews = reviews;
     }
 
     public String getTitle() {
@@ -24,8 +25,8 @@ public class Audiovisual {
         return rating;
     }
 
-    public String[] getReviews() {
-        return reviews;
+    public static ArrayList<String> getReviews() {
+        return new ArrayList<>(reviews);
     }
 
     public void setTitle(String newTitle) {
@@ -40,7 +41,7 @@ public class Audiovisual {
         this.rating = newRating;
     }
 
-    public void setReviews(String[] newReviews) {
-        this.reviews = newReviews;
+    public static void addReview(String newReview) {
+        reviews.add(newReview);
     }
 }

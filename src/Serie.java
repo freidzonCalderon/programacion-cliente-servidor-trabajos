@@ -1,8 +1,8 @@
-public class Serie extends Audiovisual {
+public class Serie extends Audiovisual implements Comparable<Serie> {
     private int noOfSeasons;
 
-    public Serie(String title, String genre, double rating, String[] reviews, int noOfSeasons) {
-        super(title, genre, rating, reviews);
+    public Serie(String title, String genre, double rating, int noOfSeasons) {
+        super(title, genre, rating);
         this.noOfSeasons = noOfSeasons;
     }
 
@@ -20,7 +20,12 @@ public class Serie extends Audiovisual {
         System.out.println(" - Título: " + this.getTitle());
         System.out.println(" - Género: " + this.getGenre());
         System.out.println(" - Calificación: " + this.getRating());
-        System.out.println(" - Comentarios: " + java.util.Arrays.toString(this.getReviews()));
+        System.out.println(" - Comentarios: " + Audiovisual.getReviews());
         System.out.println(" - Temporadas: " + this.getNoOfSeasons());
+    }
+
+    @Override
+    public int compareTo(Serie otherSerie) {
+        return this.getTitle().compareTo(otherSerie.getTitle());
     }
 }

@@ -1,8 +1,8 @@
-public class Documental extends Audiovisual{
+public class Documental extends Audiovisual implements Comparable<Documental> {
     private String topic;
 
-    public Documental(String title, String genre, double rating, String[] reviews, String topic) {
-        super(title, genre, rating, reviews);
+    public Documental(String title, String genre, double rating, String topic) {
+        super(title, genre, rating);
         this.topic = topic;
     }
 
@@ -20,7 +20,12 @@ public class Documental extends Audiovisual{
         System.out.println(" - Título: " + this.getTitle());
         System.out.println(" - Género: " + this.getGenre());
         System.out.println(" - Calificación: " + this.getRating());
-        System.out.println(" - Comentarios: " + java.util.Arrays.toString(this.getReviews()));
+        System.out.println(" - Comentarios: " + Audiovisual.getReviews());
         System.out.println(" - Tema: " + this.getTopic());
+    }
+
+    @Override
+    public int compareTo(Documental otherDocumentary) {
+        return this.getTitle().compareTo(otherDocumentary.getTitle());
     }
 }

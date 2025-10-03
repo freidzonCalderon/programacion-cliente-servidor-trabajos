@@ -1,4 +1,4 @@
-public class Usuario {
+public class Usuario implements Comparable<Usuario> {
     private String name;
 
     public Usuario(String name) {
@@ -15,5 +15,10 @@ public class Usuario {
 
     public static void logIn(Usuario usuario) {
         System.out.println("¡Bienvenido " + usuario.getName() + "!");
+    }
+
+    @Override
+    public int compareTo(Usuario otherUser) {
+        return this.name.compareTo(otherUser.getName());
     }
 }
