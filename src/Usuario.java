@@ -1,20 +1,28 @@
-public class Usuario implements Comparable<Usuario> {
-    private String name;
+import java.io.Serializable;
 
-    public Usuario(String name) {
+public class Usuario implements Comparable<Usuario>, Serializable {
+    private String name;
+    private String password;
+
+    public Usuario(String name, String password) {
         this.name = name;
+        this.password = password;
     }
 
     public String getName() {
         return name;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setName(String newName) {
         this.name = newName;
     }
 
-    public static void logIn(Usuario usuario) {
-        System.out.println("¡Bienvenido " + usuario.getName() + "!");
+    public void setPassword(String newPassword) {
+        this.password = newPassword;
     }
 
     @Override
