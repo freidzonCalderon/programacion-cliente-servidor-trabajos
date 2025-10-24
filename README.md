@@ -1,4 +1,4 @@
-# Practica 2: Curso Programación Cliente/Servidor Concurrente
+# Practica 3: Curso Programación Cliente/Servidor Concurrente
 
 ## Características Principales
 
